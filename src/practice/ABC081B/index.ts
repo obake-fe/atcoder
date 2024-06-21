@@ -1,8 +1,8 @@
 import { readFileSync } from "fs";
 
-const input = readFileSync("src/practice/ABC081B/text.txt", "utf8").split(/\n/);
-const [times, naturalNumbers] = input;
-const naturalNumbersArray: number[] = naturalNumbers.split(/\s/).map(num => +num);
+// 正規表現 \s は改行もマッチする
+const input = readFileSync("src/practice/ABC081B/text.txt", "utf8").split(/\s/);
+const naturalNumbersArray: number[] = input.slice(1).map(num => +num);
 
 
 const eachTimesArray = naturalNumbersArray.map((num) => {
