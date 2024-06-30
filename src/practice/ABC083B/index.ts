@@ -1,6 +1,9 @@
 import { readFileSync } from "fs";
+import path from "path";
 
-const [n, a, b] = readFileSync("src/practice/ABC083B/text.txt", "utf8").split(/\s/);
+const [n, a, b] = readFileSync(`src/practice/${path.basename(__dirname)}/text.txt`, "utf8").split(
+  /\s/,
+);
 
 let result = 0;
 
