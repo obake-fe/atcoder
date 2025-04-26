@@ -1,7 +1,9 @@
 import { readFileSync } from 'fs';
-import path from 'path';
+const isLocal = process.env.LOCAL === 'true'; // 環境変数をチェック
 
-const input = readFileSync(`src/practice/${path.basename(__dirname)}/text.txt`, 'utf8').trim();
+const input = isLocal
+  ? readFileSync(`src/practice/ABC086C/text.txt`, 'utf8').trim() // ローカル用
+  : readFileSync('/dev/stdin', 'utf8').trim(); // 本番用
 
 const array = input.split('\n');
 const move = array.map((str) => {

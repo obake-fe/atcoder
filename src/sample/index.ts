@@ -1,4 +1,6 @@
-import { readFileSync } from "fs";
-import path from "path";
+import { readFileSync } from 'fs';
+const isLocal = process.env.LOCAL === 'true'; // 環境変数をチェック
 
-const input = readFileSync(`src/${path.basename(__dirname)}/text.txt`, "utf8");
+const input = isLocal
+  ? readFileSync(`src/practice/{}/text.txt`, 'utf8').trim() // ローカル用
+  : readFileSync('/dev/stdin', 'utf8').trim(); // 本番用
