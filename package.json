@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "LOCAL=true ts-node src/AtCoder_Beginner_Contest_403/${npm_config_path}/index.ts",
-    "debug": "LOCAL=true node --inspect-brk -r ts-node/register src/AtCoder_Beginner_Contest_403/${npm_config_path}/_index.ts",
+    "start": "LOCAL=true ts-node src/AtCoder_Beginner_Contest_404/${npm_config_path}/index.ts",
+    "debug": "LOCAL=true node --inspect-brk -r ts-node/register src/AtCoder_Beginner_Contest_404/${npm_config_path}/index.ts",
     "build": "tsc -p .",
     "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
     "eslint": "eslint 'src/**/*.ts'",
