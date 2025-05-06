@@ -6,6 +6,7 @@
     "start": "LOCAL=true ts-node src/AtCoder_Beginner_Contest_404/${npm_config_path}/index.ts",
     "pstart": "LOCAL=true ts-node src/practice/${npm_config_path}/index.ts",
     "debug": "LOCAL=true node --inspect-brk -r ts-node/register src/AtCoder_Beginner_Contest_404/${npm_config_path}/index.ts",
+    "pdebug": "LOCAL=true node --inspect-brk -r ts-node/register src/practice/${npm_config_path}/index.ts",
     "build": "tsc -p .",
     "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
     "eslint": "eslint 'src/**/*.ts'",
