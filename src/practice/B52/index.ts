@@ -1,8 +1,9 @@
 import { readFileSync } from 'fs';
+import path from 'path';
 const isLocal = process.env.LOCAL === 'true'; // 環境変数をチェック
 
 const input = isLocal
-  ? readFileSync(`src/practice/B52/text.txt`, 'utf8').trim() // ローカル用
+  ? readFileSync(path.join(__dirname, 'text.txt'), 'utf8').trim() // ローカル用
   : readFileSync('/dev/stdin', 'utf8').trim(); // 本番用
 
 const lines = input.split('\n');
