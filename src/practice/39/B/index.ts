@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import * as path from 'path';
-import { MaxHeap } from '../../lib/priorityQueue';
+import { MaxHeap } from '../../../lib/priorityQueue';
 const isLocal = process.env.LOCAL === 'true'; // 環境変数をチェック
 
 const input = isLocal
