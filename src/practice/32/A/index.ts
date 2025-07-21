@@ -1,0 +1,25 @@
+import { readFileSync } from 'fs';
+import * as path from 'path';
+const isLocal = process.env.LOCAL === 'true'; // 環境変数をチェック
+
+const input = isLocal
+  ? readFileSync(path.join(__dirname, 'text.txt'), 'utf8').trim() // ローカル用
+  : readFileSync('/dev/stdin', 'utf8').trim(); // 本番用
+
+/*
+ * 石取りゲーム必勝法
+ */
+const [N, A, B] = input.split(' ').map(Number);
+// index が残り残り石の数。自分の番が来たときに勝利が確定しているか
+const dp: boolean[] = new Array(N + 1).fill(false);
+
+for (let i = 0; i <= N; i++) {
+  if (i >= A && !dp[i - A]) {
+    dp[i] = true;
+  }
+  if (i >= B && !dp[i - B]) {
+    dp[i] = true;
+  }
+}
+
+console.log(dp[N] ? 'First' : 'Second');
