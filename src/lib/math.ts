@@ -75,3 +75,20 @@ export const modPow = (a: bigint, b: bigint, mod: bigint): bigint => {
 
   return result;
 };
+
+/*
+ * 組み合わせ（Combination）
+ */
+export const combination = (n: number, k: number) => {
+  const _n = BigInt(n);
+  let _k = BigInt(k);
+  if (_k > _n) return 0n;
+  if (_k > _n - _k) _k = _n - _k; // 対称性を利用して高速化
+  let numerator = 1n;
+  let denominator = 1n;
+  for (let i = 1n; i <= _k; i++) {
+    numerator *= _n - i + 1n;
+    denominator *= i;
+  }
+  return numerator / denominator;
+};
